@@ -64,4 +64,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # 本番のみ
-gem 'pg', '~> 0.19.0', group: :production
+gem 'pg', group: :production
