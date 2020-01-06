@@ -23,4 +23,6 @@ test:
 # ウェブサイトを一般公開する環境
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
