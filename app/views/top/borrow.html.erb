@@ -1,0 +1,40 @@
+<h1>図書貸し出し　入力画面</h1>
+以下の項目を入力または選択してください。
+
+
+<%#=  action 属性は、フォームで収集したデータを送信すべき場所 (URL)  %>
+<%#=  method 属性は、データを送信するために使用する HTTP メソッド ("get" または "post") %>
+<%#= 入力後は確認画面へ遷移 %>
+<%#= <form method ="post" action ="/confirm"> %>
+
+<%= form_tag('/confirm', method: :post) do %>
+
+
+<p class="book_borrow">
+利用者名:
+<input type="text" name="name" placeholder="福島　太郎"><br><br>
+
+書名:
+<input type="text" name="book_name" placeholder="Ruby超勉強法の本"><br><br>
+
+本の状態: <%#=複数チェックされないようにする%>
+<input type="radio" name="book_status"  value="借りる"checked>借りる
+<input type="radio" name="book_status"  value="返却">返却
+</p>
+<br>
+<%#= submit ボタンをクリックするとフォームのデータを、 <form> 要素の action 属性で定義したWeb ページへ送信 %>
+<input type="submit"　class="btn-submit" value="確認画面へ" />
+<br>
+<br><input type="reset"　class="btn-reset"　value="クリア">
+</form>
+<% end %>
+
+
+<br>
+<a href = "/" class="btn-top-back">TOP画面へ戻る</a></p>
+
+<%# 背景 %>
+<body>
+  <div class="drop"></div>
+  <div class="wave"></div>
+</body>

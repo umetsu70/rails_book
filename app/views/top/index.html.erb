@@ -1,0 +1,54 @@
+<h1><%= tiny_format(@message) %></h1>
+
+
+<%# 貸し出し画面 %>
+<a href= "/borrow"  class="book_borrow">本の貸し出し</a>
+
+<a href= "/messages/mail"  class="mail">お問い合わせメッセージフォーム</a>
+
+<br><br>
+<table border="2" cellpadding="4">
+
+<caption>本の貸し出し一覧表
+
+  <tr>
+    <th class="column">利用者名</th>
+    <th class="column">書名</th>
+    <th class="column">本の状態</th>
+    <th class="column">編集</th>
+    <th class="column">削除</th>
+  </tr>
+
+<tr>
+<% @members.each do |member| %>
+    
+    <th><%= member.name %></th>
+    <th><%= member.book_name %></th>
+    <th><%= member.book_status %></th>
+
+    <%# 編集 %>
+    <th><%= link_to '[編集]',edit_top_path(member),class:'command' %>
+
+    <%# 削除 ダイアログを出力後、okで削除 %>
+    <th><%= link_to '[削除]',top_path(member),method: :delete,class:'command',data:{ confirm: '削除しますか？'} %>
+    </tr>
+<% end %>
+</table>
+</caption>
+
+
+
+<%# 背景 %>
+<body>
+  <div class="drop"></div>
+  <div class="wave"></div>
+</body>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+<h1>図書貸し出し画面　確認画面</h1>
+
+
+
+<%= form_tag('/top', method: :post) do %>
+<br>
+利用者名:
+<%= params[:name] %>
+<input type="hidden" name="params[:name]" value=<%= params[:name] %> >
+<br><br>
+書名:
+<%= params[:book_name] %>
+<input type="hidden" name="params[:book_name]" value=<%= params[:book_name] %> >
+<br><br>
+
+本の状態: 
+<%= params[:book_status] %>
+<input type="hidden" name="params[:book_status]" value=<%= params[:book_status] %> >
+
+<br><br>
+<input type="submit" value="完了画面へ" />
+<br><br>
+<button type="button" onclick=history.back()>戻る</button>
+<br>
+
+<% end %>
+
+<%# 背景 %>
+<body>
+  <div class="drop"></div>
+  <div class="wave"></div>
+</body>

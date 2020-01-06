@@ -1,0 +1,32 @@
+<%= form_for(@message, url: { action: :confirm }) do |f| %>
+    <div>
+        <h2>お問い合わせフォーム</h2>
+            <div>
+                <strong>入力に誤りがあります。</strong>
+                    <ul>
+                        <% @message.errors.each do |attr,error|%>
+                            <li><%= error %></li>
+                        <% end %>
+                    </ul>
+            </div>
+        <% end %>
+
+    <div>
+        <strong>お名前</strong>
+        <p><%= f.text_field :name,placeholder:'20文字以内' %></p>
+    </div>
+
+    <div>
+        <strong>メールアドレス</strong>
+        <p><%=f.text_field :email,placeholder:'30文字以内' %></p>
+    </div>
+
+    <div>
+        <strong>お問い合わせ内容</strong>
+        <p><%=f.text_area :content,placeholder:'200文字以内' %></p>
+    </div>
+
+    <div>
+        <%= f.submit '確認画面へ' %>
+    </div>
+<% end %>

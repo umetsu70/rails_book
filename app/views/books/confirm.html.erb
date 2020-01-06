@@ -1,0 +1,33 @@
+<h1>図書貸し出し画面　確認画面</h1>
+
+<%#= 三項演算子使用 %>
+<%= form_with model: @member, method: @member.id.nil? ? :post : :put, url: @member.id.nil? ? books_path : book_path(@member) , local:true do |f| %>
+  <p class="book_borrow">
+
+
+  <%= f.label :name, '利用者名：' %>
+  <%= @member.name %>
+  <%= f.hidden_field :name %>
+  <br><br>
+  <%= f.label :book_name, '書名：' %>
+  <%= @member.book_name %>
+  <%= f.hidden_field :book_name %>
+  <br><br>
+  <%= f.label :book_status,'本の状態：' %>
+  <%= @member.book_status %>
+  <%= f.hidden_field :book_status %>
+  <br><br>
+  </p>
+  <br>
+<%#= submitボタンをクリックするとフォームのデータを、<form>要素のaction属性で定義したWebページへ送信 %>
+<%= f.submit '完了画面へ',class: 'btn-submit' %>
+<br><br>
+<%= link_to '戻る','javascript:history.back()'%>
+
+<% end %>
+
+<%# 背景 %>
+<body>
+  <div class="drop"></div>
+  <div class="wave"></div>
+</body>

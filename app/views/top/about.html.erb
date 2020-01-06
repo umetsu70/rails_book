@@ -1,0 +1,33 @@
+<% @page_title = "このサイトについて" %>
+
+<h1><%= @page_title %></h1>
+
+<p>
+	書籍管理のシステムです。
+</p>
+
+
+
+
+
+
+<br><br>
+<table border="2" cellpadding="4">
+
+<% @members.each do |member| %>
+    <tr>
+    <th><%= member.name %></th>
+    <th><%= member.book_name %></th>
+    <th><%= member.book_status %></th>
+    </tr>
+
+</table>
+<% end %>
+
+
+<%# 背景 %>
+<body>
+  <div class="drop"></div>
+  <div class="wave"></div>
+</body>
+

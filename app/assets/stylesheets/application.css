@@ -1,0 +1,218 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ p.book_borrow {
+  padding: 0.5em;/*文字周りの余白*/
+  color: #494949;/*文字色*/
+  background: #fffaf4;/*背景色*/
+  border-left: solid 5px #ffaf58;/*左線（実線 太さ 色）*/
+}
+
+.btn-top-back {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 37px;
+  color: #9b58e7;
+  text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.32), 0px 1px 0px #6182ca, 0px 2px 0px #4f6aa7, 0px 3px 0px #5470ad;
+}
+.btn-top-back:active {
+  top: 4px;
+  text-shadow: none;
+}
+
+th {
+  background-color: #ffd78c;
+  }
+
+  .column{
+    background-color:rgb(230, 128, 13);
+  }
+
+ aside#sidebar{
+     background-color:red;
+ }
+
+ /* 入力画面遷移 css */
+ .book_borrow{
+    /* 色 */
+     color:rgb(51, 13, 121);
+     display: inline-block;
+     padding: 0.5em 1em;
+     text-decoration: none;
+     background: #668ad8;/*ボタン色*/
+     color: #FFF;
+     border-bottom: solid 4px #627295;
+     border-radius: 3px;
+ }
+ .book_borrow:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+
+
+/* 背景 */
+body {
+   /* 色 */
+  color:rgb(14, 56, 24);
+  font-family: "serif";
+  background-color: rgb(7, 153, 250);
+  overflow: hidden;
+}
+
+div {
+  margin: 175px auto;
+}
+
+.drop {
+  position: relative;
+    width: 20px;
+    height: 20px;
+  top: -30px;
+  margin: 0 auto;
+    background: #FFF;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+  -moz-animation-name: drip;
+  -webkit-animation-name: drip;
+  animation-name: drip;
+  -moz-animation-timing-function: cubic-bezier(1,0,.91,.19);
+  -webkit-animation-timing-function: cubic-bezier(1,0,.91,.19);
+  animation-timing-function: cubic-bezier(1,0,.91,.19);
+  -moz-animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.drop:before {
+  content: "";
+  position: absolute;
+  width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 30px solid rgba(255,255,255,1);
+  top: -22px;
+}
+
+.wave {
+  position: relative;
+  opacity: 0;
+  top: 0;
+    width: 2px;
+    height: 1px;
+  border: #FFF 7px solid;
+    -moz-border-radius: 300px / 150px;
+    -webkit-border-radius: 300px / 150px;
+    border-radius: 300px / 150px;
+  -moz-animation-name: ripple;
+  -webkit-animation-name: ripple;
+  animation-name: ripple;
+  -moz-animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  -moz-animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.wave:after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  top: -10px;
+  left: -5px;
+    width: 2px;
+    height: 1px;
+  border: #FFF 5px solid;
+    -moz-border-radius: 300px / 150px;
+    -webkit-border-radius: 300px / 150px;
+    border-radius: 300px / 150px;
+  -moz-animation-name: ripple-2;
+  -webkit-animation-name: ripple-2;
+  animation-name: ripple-2;
+  -moz-animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+@keyframes ripple {
+    from {
+      opacity: 1;
+    }
+    to {
+      width: 600px;
+      height: 300px;
+      border-width: 1px;
+      top: -100px;
+      opacity: 0;
+    }
+}
+
+@keyframes ripple-2 {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  100% {
+    width: 200px;
+    height: 100px;
+    border-width: 1px;
+    top: 100px;
+    left: 200px;
+  }
+}
+
+@keyframes drip {
+    to {
+      top: 190px;
+    }
+}
+
+/* 文字：ページタイトル */
+h1 {
+  position: relative;
+  padding: 5px 5px 5px 42px;
+  background: #77c3df;
+  font-size: 25px;
+  color: white;
+  margin-left: -33px;
+  line-height: 1.3;
+  z-index:-1;
+}
+
+h1:before {
+  position: absolute;
+  content: '';
+  left: -2px;
+  top: -2px;
+  border: none;
+  border-left: solid 40px white;
+  border-bottom: solid 79px transparent;
+  z-index:-2
+}

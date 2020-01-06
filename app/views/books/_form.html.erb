@@ -1,0 +1,42 @@
+<%#= テンプレートファイル %>
+<h1>図書貸し出し</h1>
+以下の項目を入力または選択してください。
+
+
+<%#=  action 属性は、フォームで収集したデータを送信すべき場所 (URL)  %>
+<%#=  method 属性は、データを送信するために使用する HTTP メソッド ("get" または "post") %>
+<%#= <form method ="post" action ="/confirm"> %>
+<%#= rails5.1からform_withが導入 %>
+<%#= modelに@member指定で、books_controller#new関数で作成した@memberインスタンスを渡す %>
+<%#= localにtrue: 「ajaxを使わない」%>
+<%= form_with model:@member, method: :post, url:confirm_books_path, local: true do |f|%>
+
+    <%= f.hidden_field :id %>
+  <p class="book_borrow">
+    <%= f.label :name,'利用者名' %>
+    <%= f.text_field :name, placeholder: '福島 太郎'%>
+  <br><br>
+    <%= f.label :book_name, '書名'%>
+    <%= f.text_field :book_name, placeholder: '超基本ruby入門'%>
+    <br><br>
+    <%= f.label :book_status,'本の状態'%>
+    <%= f.radio_button :book_status,'借りる', checked:true %>
+    <%= f.label :book_status, '借りる',{ value: '借りる',style:'display: inline-block;'} %>
+    <%= f.radio_button :book_status,'返却'%>
+    <%= f.label :book_status,'返却',{ value:'返却',style:'display: inline-block;'} %>
+  <br><br>
+  </p>
+  <br>
+  <%#= submitボタンをクリックするとフォームのデータを、<form>要素のaction属性で定義したWebページへ送信 %>
+<%= f.submit '確認画面へ',class: 'btn-submit' %>
+  <br>
+<%= f.submit 'クリア',type: :reset %>
+<% end %>
+<br>
+<a href = "/" class="btn-top-back">TOP画面へ戻る</a></p>
+
+<%# 背景 %>
+<body>
+  <div class="drop"></div>
+  <div class="wave"></div>
+</body>

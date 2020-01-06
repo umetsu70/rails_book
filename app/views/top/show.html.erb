@@ -1,0 +1,29 @@
+<h1><%= tiny_format(@message) %></h1>
+
+
+<%# 貸し出し画面 %>
+<a href= "/borrow" >本の貸し出し 編集画面</a>
+
+<br><br>
+<table border="2" cellpadding="4">
+
+<% @members.each do |member| %>
+
+    <tr>
+    <th><%= member.name %></th>
+    <th><%= member.book_name %></th>
+    <th><%= member.book_status %></th>
+    </tr>
+
+</table>
+
+<% end %>
+
+
+
+
+
+
+
+
+
